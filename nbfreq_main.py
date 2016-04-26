@@ -33,7 +33,7 @@ print("{0} rows and {1} columns to analyze".format(len(data.index), len(data.col
 print("")
 
 #Record all question to save all plots and csv files for all networks generated. Doing this significantly slows down the process but may be useful to invistigate the results
-record_all = raw_input("Record results for all networks generate for all columns (Y):")
+record_all = raw_input("Record results for all networks generated for all columns (Y):")
 
 #Define Zeta Type if not default
 zeta_type = raw_input("Zeta coefficient is supplied (S), manual input (M), default (D):")
@@ -101,18 +101,18 @@ for column in arange(len(data.columns.values)):
     current = data.columns.values[column]
     print("")
     print("Starting {0}".format(current))
-    
+
     #Find none blank values and assign them in list distribution purely to get the zeta values in default 'D' mode
     if zeta_type != 'S' and zeta_type != 'M':
         from nbfreq_zeta import zeta_default
-        zeta_list = zeta_default(data.ix[:,column].convert_objects(convert_numeric=True).dropna())
+        zeta_list = zeta_default(pd.to_numeric(data.ix[:,column]).dropna())
 
     #Define list to store all the temporarily results for the current column
     temp_results = []
 
     #Compute, store, and save all networks for list of zeta coefficients
     for i in arange(len(zeta_list)):
-        temp_results.append(network_calc(data.ix[:,column].convert_objects(convert_numeric=True).dropna(), zeta_list[i], column)) 
+        temp_results.append(network_calc(pd.to_numeric(data.ix[:,column]).dropna(), zeta_list[i], column)) 
         if record_all == 'Y':
             temp_zeta = [temp_results[i][1]]
             temp_zeta_current = int(current)
