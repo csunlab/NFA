@@ -1,6 +1,10 @@
 '''
+Network-based Frequency Analysis (NFA) - Functions Script
+
 Derrible S, Ahmad N (2015) Network-Based and Binless Frequency Analyses. PLoS ONE 10(11): e0142108. doi:10.1371/journal.pone.0142108
 Available at: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0142108
+
+version 1.00
 '''
 
 #Libraries needed to run the tool
@@ -14,7 +18,8 @@ import pandas as pd
 
 #Calculate network from individual columns
 def network_calc(self, coef, col):
-    size = len(self.index)
+    self.to_csv('text_bug.csv')
+    size = len(self.index)    
     adjacency = np.zeros(size**2).reshape(size, size)
     for i in arange(size):
         temp_a =  self[i]-coef <= self
