@@ -1,2 +1,2 @@
-# nbfreq
-Network-based and non-parametric frequency analyses
+# NFA
+Network-based Frequency analysis
