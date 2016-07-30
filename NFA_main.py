@@ -1,6 +1,10 @@
 '''
+Network-based Frequency Analysis (NFA) - Main Script
+
 Derrible S, Ahmad N (2015) Network-Based and Binless Frequency Analyses. PLoS ONE 10(11): e0142108. doi:10.1371/journal.pone.0142108
 Available at: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0142108
+
+version 1.00
 '''
 
 #Libraries needed to run the tool
@@ -8,7 +12,7 @@ Available at: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0
 import numpy as np
 import csv
 import pandas as pd
-from nbfreq_functions import *
+from NFA_functions import *
 import os
 
 #Ask for file name
@@ -104,7 +108,7 @@ for column in arange(len(data.columns.values)):
 
     #Find none blank values and assign them in list distribution purely to get the zeta values in default 'D' mode
     if zeta_type != 'S' and zeta_type != 'M':
-        from nbfreq_zeta import zeta_default
+        from NFA_zeta import zeta_default
         zeta_list = zeta_default(pd.to_numeric(data.ix[:,column]).dropna())
 
     #Define list to store all the temporarily results for the current column
@@ -129,8 +133,8 @@ for column in arange(len(data.columns.values)):
     if zeta_thresh != '':
         step = int(zeta_thresh)
     else:
-        from nbfreq_zeta import zeta_threshold
-        step = zeta_threshold(temp_results) #See nbfreq_zeta script to modify default
+        from NFA_zeta import zeta_threshold
+        step = zeta_threshold(temp_results) #See NFA_zeta script to modify default
 
     for i in arange(len(temp_results)):
         if i <= (len(temp_results) - step):
