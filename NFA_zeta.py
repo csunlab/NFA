@@ -1,6 +1,10 @@
 '''
+Network-based Frequency Analysis (NFA) - Zeta Script
+
 Derrible S, Ahmad N (2015) Network-Based and Binless Frequency Analyses. PLoS ONE 10(11): e0142108. doi:10.1371/journal.pone.0142108
 Available at: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0142108
+
+version 1.00
 '''
 
 #Libraries needed to run the tool
