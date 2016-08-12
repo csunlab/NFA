@@ -9,6 +9,8 @@ See version 1.00 if you have a pandas version earlier than 0.18.0.
 
 What’s new
 
-- minor bug fix in the NFA_functions.py code with new pandas version. Added “.iloc” after “self” on lines 
+- minor bug fix in the NFA_functions.py code with new pandas version. Added “.iloc” after “self” on lines 27, 28, 37.
 
-- added “# -*- coding: utf-8 -*-“ on top of every code to prevent some bugs when using some characters
+- minor bug fix in NFA_main.py. The headers do not have to be numbers now to be able to plot the final figure. Changed “int” to “eval” at line 170. 
+
+- added “# -*- coding: utf-8 -*-“ on top of every code to prevent some bugs when using some characters.
