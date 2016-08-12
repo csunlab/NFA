@@ -167,7 +167,7 @@ for column in arange(len(data.columns.values)):
     print("Optimal found for coef {0}, with value {1} for {2}".format(temp_results[id_opti][1], id_value, id_name))
 
     results.append(float(temp_results[id_opti][1]))
-    results_header.append(eval(current))
+    results_header.append(current)
     plot_final_network(temp_results[id_opti], temp_results[id_opti][1], file_name, current, x_label, coef_show, column_name, mode_value, x_scale, y_scale, x_limits1, x_limits2, y_limits1, y_limits2, grid_lines)
 
 print("")
