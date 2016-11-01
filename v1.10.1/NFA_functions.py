@@ -20,7 +20,6 @@ import pandas as pd
 
 #Calculate network from individual columns
 def network_calc(self, coef, col):
-    self.to_csv('text_bug.csv')
     size = len(self.index)    
     adjacency = np.zeros(size**2).reshape(size, size)
     for i in arange(size):
